@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ICFES LAND IA — Coach, Modo Profesor y Simulacro Vivo. Entrena con inteligencia artificial para el examen ICFES.">
+  <title>ICFES LAND IA | Entrena con inteligencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/IA.css">
+</head>
+<body>
+  <div class="page-loader" id="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-brand">ICFES LAND IA</span>
+      <span class="loader-bar"></span>
+    </div>
+  </div>
+
+  <header class="navbar is-solid" id="navbar">
+    <a href="inicio.html" class="logo" aria-label="ICFES LAND — Inicio">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">ICFES <em>LAND</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="inicio.html">Inicio</a>
+      <a href="queofrecemos.html">Qué ofrecemos</a>
+      <a href="nuestrocamino.html">Nuestro camino</a>
+      <a href="proyeccion.html">Proyección</a>
+      <a href="IA.html" class="active nav-ia">ICFES LAND IA</a>
+      <a href="contacto.html" class="nav-cta">Matrículas</a>
+    </nav>
+  </header>
+
+  <main class="ia-app">
+    <!-- Pantalla bienvenida -->
+    <section class="ia-screen is-active" id="screenWelcome" data-screen="welcome">
+      <div class="ia-hero-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80" alt="">
+        <div class="ia-hero-veil"></div>
+      </div>
+      <div class="ia-welcome">
+        <p class="ia-kicker">Innovación ICFES LAND</p>
+        <h1>ICFES LAND <span>IA</span></h1>
+        <p class="ia-sub">
+          Tu entrenador inteligente para el ICFES. No es un chatbot:
+          es un sistema que genera preguntas, analiza tu proceso y te guía.
+        </p>
+        <button type="button" class="btn btn-primary" id="btnStart">Entrar a la IA</button>
+      </div>
+    </section>
+
+    <!-- Registro: nombre y edad -->
+    <section class="ia-screen" id="screenProfile" data-screen="profile">
+      <div class="ia-panel">
+        <div class="ia-chat-head">
+          <span class="ia-avatar" aria-hidden="true"></span>
+          <div>
+            <strong>Coach ICFES LAND</strong>
+            <span>Paso 1 · Conociéndote</span>
+          </div>
+        </div>
+        <div class="ia-bubble ia-bubble--bot" id="profileGreeting">
+          ¡Hola! Soy la IA de ICFES LAND. Antes de empezar, necesito conocerte un poco.
+          ¿Cuál es tu nombre y cuántos años tienes?
+        </div>
+        <form class="ia-form" id="profileForm">
+          <label>
+            Nombre
+            <input type="text" id="userName" name="name" required maxlength="40" placeholder="Ej. Camila" autocomplete="given-name">
+          </label>
+          <label>
+            Edad
+            <input type="number" id="userAge" name="age" required min="12" max="25" placeholder="Ej. 16">
+          </label>
+          <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Elección de modo -->
+    <section class="ia-screen" id="screenModes" data-screen="modes">
+      <div class="ia-panel ia-panel--wide">
+        <div class="ia-chat-head">
+          <span class="ia-avatar" aria-hidden="true"></span>
+          <div>
+            <strong>Coach ICFES LAND</strong>
+            <span>Paso 2 · Elige tu entrenamiento</span>
+          </div>
+        </div>
+        <div class="ia-bubble ia-bubble--bot" id="modeGreeting"></div>
+        <div class="mode-grid">
+          <button type="button" class="mode-card" data-mode="coach">
+            <span class="mode-tag">Coach</span>
+            <h2>Coach ICFES IA</h2>
+            <p>Pregunta tipo ICFES + análisis de tiempo, duda y tipo de error.</p>
+          </button>
+          <button type="button" class="mode-card" data-mode="profesor">
+            <span class="mode-tag">Profesor</span>
+            <h2>Modo Profesor</h2>
+            <p>Justificación, conceptos clave y pistas para descubrir la respuesta.</p>
+          </button>
+          <button type="button" class="mode-card" data-mode="simulacro">
+            <span class="mode-tag">Vivo</span>
+            <h2>Simulacro Vivo</h2>
+            <p>Te llevamos al canal de YouTube con simulacros para practicar.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sesión de pregunta (Coach / Profesor) -->
+    <section class="ia-screen" id="screenSession" data-screen="session">
+      <div class="ia-panel ia-panel--wide">
+        <div class="session-top">
+          <div class="ia-chat-head">
+            <span class="ia-avatar" aria-hidden="true"></span>
+            <div>
+              <strong id="sessionModeTitle">Coach ICFES IA</strong>
+              <span id="sessionUserLabel">Entrenamiento activo</span>
+            </div>
+          </div>
+          <div class="session-meta">
+            <span class="meta-chip" id="subjectChip">Materia</span>
+            <span class="meta-chip meta-chip--timer" id="timerChip">00:00</span>
+          </div>
+        </div>
+
+        <article class="question-card" id="questionCard">
+          <p class="question-text" id="questionText"></p>
+          <div class="options" id="optionsList" role="radiogroup" aria-label="Opciones de respuesta"></div>
+          <button type="button" class="btn btn-primary" id="btnSubmit" disabled>Enviar respuesta</button>
+        </article>
+
+        <div class="feedback" id="feedbackBox" hidden></div>
+
+        <div class="session-actions" id="sessionActions" hidden>
+          <button type="button" class="btn btn-soft" id="btnAnother">Otra pregunta</button>
+          <button type="button" class="btn btn-ghost-dark" id="btnChangeMode">Cambiar modo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulacro Vivo -->
+    <section class="ia-screen" id="screenSimulacro" data-screen="simulacro">
+      <div class="ia-panel">
+        <div class="ia-chat-head">
+          <span class="ia-avatar" aria-hidden="true"></span>
+          <div>
+            <strong>Simulacro Vivo</strong>
+            <span>Canal oficial ICFES LAND</span>
+          </div>
+        </div>
+        <div class="ia-bubble ia-bubble--bot" id="simulacroMsg"></div>
+        <div class="yt-card">
+          <img
+            src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=900&q=80"
+            alt="Contenido en video para simulacros ICFES"
+          >
+          <div class="yt-card-body">
+            <h2>YouTube · @icfesland</h2>
+            <p>Busca los videos donde hay links de simulacros y realízalos para entrenar tu nivel real.</p>
+            <a
+              class="btn btn-primary"
+              id="btnYoutube"
+              href="https://www.youtube.com/@icfesland"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ir al canal de ICFES LAND</a>
+          </div>
+        </div>
+        <button type="button" class="btn btn-ghost-dark" id="btnBackModes">Volver a elegir modo</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--compact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <strong>ICFES LAND IA</strong>
+        <p>Seamos excelentes · Aprende y avanza</p>
+      </div>
+      <p class="footer-copy">© 2026 ICFES LAND. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/IA.js"></script>
+</body>
+</html>

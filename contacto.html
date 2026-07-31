@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Matrículas ICFES LAND — Inscríbete y recibe confirmación por celular y correo.">
+  <title>Matrículas | ICFES LAND</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+  <div class="page-loader" id="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-brand">ICFES LAND</span>
+      <span class="loader-bar"></span>
+    </div>
+  </div>
+
+  <header class="navbar is-solid" id="navbar">
+    <a href="inicio.html" class="logo" aria-label="ICFES LAND — Inicio">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">ICFES <em>LAND</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="inicio.html">Inicio</a>
+      <a href="queofrecemos.html">Qué ofrecemos</a>
+      <a href="nuestrocamino.html">Nuestro camino</a>
+      <a href="proyeccion.html">Proyección</a>
+      <a href="IA.html" class="nav-ia">ICFES LAND IA</a>
+      <a href="contacto.html" class="active nav-cta">Matrículas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="enroll-hero">
+      <div class="enroll-hero-media" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80"
+          alt=""
+          fetchpriority="high"
+        >
+        <div class="enroll-hero-veil"></div>
+      </div>
+      <div class="enroll-hero-content">
+        <p class="hero-brand">ICFES <span>LAND</span></p>
+        <h1>Matrículas</h1>
+        <p class="hero-lead">
+          Inscríbete ahora. Al confirmar, te enviaremos la bienvenida
+          a tu celular y a tu correo electrónico.
+        </p>
+      </div>
+    </section>
+
+    <section class="enroll-section">
+      <div class="enroll-layout">
+        <aside class="enroll-aside">
+          <p class="eyebrow">Inscripción</p>
+          <h2>Da el primer paso hacia tu mejor ICFES</h2>
+          <p>
+            Completa el formulario con tus datos. Al pulsar
+            <strong>Inscribirme</strong>, ICFES LAND se comunicará contigo
+            por WhatsApp/SMS y por correo con tu mensaje de bienvenida.
+          </p>
+          <ul class="enroll-perks">
+            <li>Confirmación inmediata al celular</li>
+            <li>Correo de bienvenida automático</li>
+            <li>Información de horarios y grupo en próximas horas</li>
+          </ul>
+          <p class="enroll-slogan">Seamos excelentes · Aprende y avanza</p>
+        </aside>
+
+        <div class="form-wrap">
+          <form class="enroll-form" id="enrollForm" novalidate>
+            <div class="form-row">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required maxlength="80" placeholder="Ej. Jean Carlos Ramírez" autocomplete="name">
+            </div>
+
+            <div class="form-row">
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" name="edad" required min="12" max="25" placeholder="Ej. 16">
+            </div>
+
+            <div class="form-row form-row--split">
+              <div>
+                <label for="docTipo">Documento</label>
+                <select id="docTipo" name="docTipo" required>
+                  <option value="">Selecciona</option>
+                  <option value="TI">TI — Tarjeta de identidad</option>
+                  <option value="CC">CC — Cédula de ciudadanía</option>
+                </select>
+              </div>
+              <div>
+                <label for="docNumero">Número de TI o CC</label>
+                <input type="text" id="docNumero" name="docNumero" required inputmode="numeric" pattern="[0-9]{5,12}" placeholder="Solo números" maxlength="12">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" required placeholder="Ej. jeancarloramirez@gmail.com" autocomplete="email">
+            </div>
+
+            <div class="form-row">
+              <label for="nacimiento">Fecha de nacimiento</label>
+              <input type="date" id="nacimiento" name="nacimiento" required>
+            </div>
+
+            <div class="form-row">
+              <label for="programa">Curso o programa de interés</label>
+              <select id="programa" name="programa" required>
+                <option value="">Selecciona un programa</option>
+                <option value="Presencial general (todas las materias · 1 año)">Presencial general (todas las materias · 1 año)</option>
+                <option value="Presencial por materia (6 meses)">Presencial por materia (6 meses)</option>
+                <option value="Virtual general (todas las materias · 1 año)">Virtual general (todas las materias · 1 año)</option>
+                <option value="Virtual por materia (6 meses)">Virtual por materia (6 meses)</option>
+                <option value="Nocturno (preparación completa · 1 año)">Nocturno (preparación completa · 1 año)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="celular">Número de teléfono celular principal</label>
+              <div class="phone-field">
+                <span class="phone-prefix">+57</span>
+                <input type="tel" id="celular" name="celular" required inputmode="numeric" pattern="[0-9]{10}" placeholder="3183874973" maxlength="10" autocomplete="tel-national">
+              </div>
+              <small>10 dígitos colombianos, sin indicativo.</small>
+            </div>
+
+            <p class="form-error" id="formError" hidden></p>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="btnSubmit">
+              Inscribirme
+            </button>
+          </form>
+
+          <div class="success-panel" id="successPanel" hidden>
+            <div class="success-badge">Inscripción exitosa</div>
+            <h2>¡Bienvenido(a) a ICFES LAND!</h2>
+            <p id="successIntro"></p>
+            <div class="success-channels">
+              <div>
+                <strong>Celular</strong>
+                <span id="successPhone"></span>
+              </div>
+              <div>
+                <strong>Correo</strong>
+                <span id="successEmail"></span>
+              </div>
+            </div>
+            <article class="welcome-preview" id="welcomePreview"></article>
+            <p class="success-hint">
+              Se abrieron WhatsApp y tu correo con el mensaje de bienvenida.
+              Confirma el envío en cada ventana para recibirlo.
+            </p>
+            <div class="success-actions">
+              <a class="btn btn-primary" id="retryWhatsApp" href="#" target="_blank" rel="noopener">Reenviar por WhatsApp</a>
+              <a class="btn btn-soft" id="retryEmail" href="#">Reenviar por correo</a>
+              <button type="button" class="btn btn-ghost-dark" id="btnNewEnroll">Nueva inscripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <strong>ICFES LAND</strong>
+        <p>Seamos excelentes · Aprende y avanza</p>
+      </div>
+      <p class="footer-copy">© 2026 ICFES LAND. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>
